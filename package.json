@@ -11,7 +11,7 @@
     "bootstrap": "^5.2.3",
     "canvasjs-react-charts": "^1.0.5",
     "chart": "^0.1.2",
-    "chart.js": "^3.0.0",
+    "chart.js": "^4.2.1",
     "dompurify": "^2.4.0",
     "node-sass": "^7.0.3",
     "react": "^18.2.0",

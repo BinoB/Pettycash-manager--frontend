@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getProducts } from "../../redux/features/product/productSlice";
 import LineChart from "./LineChart";
 import BarChart from "./BarChart";
 
 function Chart() {
   const dispatch = useDispatch();
-  // const [currentItems, setCurrentItems] = useState([]);
   const [chartData, setChartData] = useState();
 
   useEffect(() => {
     async function fetchData() {
       const products = await dispatch(getProducts({}));
 
-      //     setCurrentItems(products.payload);
       setChartData({
         labels: products.payload.map((data) => {
           var dateObj = new Date(data.createdAt);
@@ -27,7 +25,6 @@ function Chart() {
         datasets: [
           {
             label: "Expense",
-            /* data: UserData.map((data) => data.userGain), */
             data: products.payload.map((data) => data.price * data.quantity),
             backgroundColor: [
               "rgba(21, 177, 189, 0.8)",
