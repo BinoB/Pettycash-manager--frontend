@@ -35,7 +35,7 @@ export const loginUser = async (userData) => {
   try {
     const response = await axios.post(
       `${BACKEND_URL}/api/users/login`,
-      userData
+      userData,{withCredentials:true}
     );
     if (response.statusText === "OK") {
       toast.success("Login Successful...");
@@ -54,6 +54,7 @@ export const loginUser = async (userData) => {
 export const logoutUser = async () => {
   try {
     await axios.get(`${BACKEND_URL}/api/users/logout`);
+
   } catch (error) {
     const message =
       (error.response && error.response.data && error.response.data.message) ||
@@ -100,7 +101,7 @@ export const resetPassword = async (userData, resetToken) => {
 // Get Login Status
 export const getLoginStatus = async () => {
   try {
-    const response = await axios.get(`${BACKEND_URL}/api/users/loggedin`);
+    const response = await axios.get(`${BACKEND_URL}/api/users/loggedin`,{withCredentials:true});
     return response.data;
   } catch (error) {
     const message =

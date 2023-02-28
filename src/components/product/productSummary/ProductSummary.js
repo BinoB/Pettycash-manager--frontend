@@ -31,7 +31,7 @@ const ProductSummary = ({ products }) => {
     dispatch(CALC_Expense_VALUE(products));
     dispatch(CALC_CATEGORY(products));
   }, [dispatch, products]);
-
+console.log(products)
   return (
     <div className="product-summary">
       <h3 className="--mt">Expense Status</h3>
