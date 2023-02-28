@@ -76,14 +76,12 @@ const Reset = () => {
               Reset Password
             </button>
             <div className={styles.links}>
-              <div className="justify-content-between text text-decoration-none">
               <p>
-                <Link to="/" className="text-decoration-none">- Home</Link>
+                <Link to="/">- Home</Link>
               </p>
               <p>
-                <Link to="/login" className="text-decoration-none">- Login</Link>
+                <Link to="/login">- Login</Link>
               </p>
-              </div>
             </div>
           </form>
         </div>
